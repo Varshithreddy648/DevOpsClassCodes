@@ -4,11 +4,12 @@ doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" />
 <xsl:decimal-format decimal-separator="." grouping-separator="," />
 
 <!-- keys for violations list -->
-<xsl:key name="violations" match="violation" use="@rule" />
+<xsl:key name="violations" match="violation" use="@rule" />   
 
 <!-- XSL for PMD report. Author : Seshagiri Sriram. -->
 <!-- Inspired by Checkstyle -->
 
+	
 <xsl:template name="timestamp">
 	<!--** Timestamp processing to display date -->
 	<xsl:value-of select="substring-before(//pmd/@timestamp, 'T')"/> - <xsl:value-of select="substring-before(substring-after(//pmd/@timestamp, 'T'), '.')"/>
